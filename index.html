@@ -17,16 +17,7 @@
   </head>
   <body ng-app="angularTemplate">
     <div ng-controller="AngularTemplateCtrl">
-      <div class="row stripe2">
-        <div class="small-12 columns">
-            <div class="announcement">
-              ANNOUNCEMENTS: To get on the waitlist, please fill out this <a href="https://docs.google.com/forms/d/1isjNjPXcHHXwNstyGllgIOodN6ZM3wTY9oMKOvXuLDI">survey</a>; do not email Ranjitha directly.
-            </div>
-        </div>
-      </div>
-
       <div ng-include="'header.html'"></div>
-
       <div class="row">
           <div class="small-12 medium-9 large-9 columns">
             <div class="section mobile-only">
@@ -45,13 +36,13 @@
             <div class="section">
               <div class="heading">ASSIGNMENTS</div>
               <div class="course_description">
-                This course centers around four MPs, and a final project (FP), in which students build an original web application in 3-4 person teams. Late assignments will receive absolutely no credit; however, each student gets <span style="font-weight:600">three 24-hour late days</span> that can be used for MPs. (Late days cannot be used for the final project.)
+                This course centers around five MPs. Late assignments will receive absolutely no credit; however, each student gets <span style="font-weight:600">three 24-hour late days</span> that can be used for MPs.
               </div>
             </div>
             <div class="section">
               <div class="heading">EXAMS</div>
               <div class="course_description">
-                There is an <span style="font-weight:600">in-class midterm on October 31st</span>; if you cannot attend the midterm for some reason, you will need to make alternative arrangements at least two weeks in advance. There is no final exam.
+                There is an <span style="font-weight:600">in-class midterm on July 5th</span> and a <span style="font-weight:600">final on Aug 5th</span>; if you cannot attend any of them for some reason, you will need to make alternative arrangements at least two weeks in advance.
               </div>
             </div>
             <div class="section">
@@ -79,12 +70,13 @@
             <div class="grading section">
               <div class="heading">GRADING</div>
               <div class="section">
-                <div class="grading-breakdown">10%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP1: Basics</div>
-                <div class="grading-breakdown">10%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP2: Design</div>
-                <div class="grading-breakdown">10%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP3: Frontend</div>
-                <div class="grading-breakdown">20%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP4: Backend</div>
+                <div class="grading-breakdown">3%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP0: Basics</div>
+                <div class="grading-breakdown">10%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP1: Webpage</div>
+                <div class="grading-breakdown">15%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP2: Responsive + Angular</div>
+                <div class="grading-breakdown">22%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP3: Frontend</div>
+                <div class="grading-breakdown">10%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MP4: Backend</div>
                 <div class="grading-breakdown">20%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MIDTERM</div>
-                <div class="grading-breakdown">30%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FINAL PROJECT</div>
+                <div class="grading-breakdown">20%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FINAL</div>
               </div>
             </div>
           </div>
@@ -98,23 +90,37 @@
               <div class="small-2 columns week-heading">
                 WEEK {{week.week}}
               </div>
-              <div class="small-5 columns" ng-repeat="class in week.classes">
-                <div class="date-heading">{{class.date}}</div>
-                <div><a ng-if="class.slides!=''" href={{"slides/"+class.slides}} class="topic">{{class.topic}}</a></div>
-                <div><a ng-if="class.slides==''" href="#" class="topic">{{class.topic}}</a></div>
-                <div class="description">{{class.description}}</div>
+                <div class="small-10 columns">
+                  <div class="row lecture" ng-repeat="class in week.classes">
+                    <div class="columns small-2">{{class.date}}</div>
+                    <div class="columns small-3">
+                      <a ng-if="class.slides!=''" href={{"slides/"+class.slides}} class="topic">{{class.topic}}</a>
+                      <a ng-if="class.slides==''" href="#" class="topic">{{class.topic}}</a>
+                    </div>
+                    <div class="columns small-4">
+                      <div class="description">{{class.description}}</div>
+                    </div>
+                    <div class="columns small-3">
+                      <div class="assignment">{{class.projectnote}}</div>
+                    </div>
 
-                <div ng-repeat="reading in class.readings">
-                  <div class="reading">
-                    <a href={{reading.link}}>
-                      <span class="title">{{reading.title}}</span>
-                    </a>
-                  </div>
-                </div><!-- END OF READINGS -->
+                    </div>
 
-                <div class="assignment">{{class.projectnote}}</div>
 
-              </div><!-- END OF CLASS -->
+                    <div ng-repeat="reading in class.readings">
+                      <div class="reading">
+                        <a href={{reading.link}}>
+                          <span class="title">{{reading.title}}</span>
+                        </a>
+                      </div>
+                    </div><!-- END OF READINGS -->
+
+                    <div class="assignment">{{class.projectnote}}</div>
+
+                  </div><!-- END OF CLASS -->
+
+                </div>
+
 
           </div><!-- END OF WEEK -->
 
