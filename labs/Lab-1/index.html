@@ -69,13 +69,13 @@ vagrant up
 </code>
 6 - SSH into the virtual machine once it has booted up:</p>
 
-<p><code>bash
+<p><code>
 vagrant ssh
 </code></p>
 
 <p>7 - The <code>vagrant-dev</code> folder on your host machine is mounted as <code>/vagrant</code> in your guest machine. Change your directory to this folder. This folder remains synced between the two operating systems and is the ideal place to put your projects. That way, you can edit files using the editor on OS X and run them from the terminal in Ubuntu. Now run the <code>install.sh</code> script present in that folder.</p>
 
-<p><code>bash
+<p><code>
 cd /vagrant
 sudo apt-get install dos2unix **#you can skip this if you are not on a Windows machine**
 dos2unix install.sh **#you can skip this if you are not on a Windows machine**
@@ -84,7 +84,7 @@ source ~/.profile
 </code>
 8 - Go to your github account (or create one), and create a new repository named <code>mp1</code>. <strong><em>Set it to private</em></strong> (you’ll have to activate the <a href="https://education.github.com/pack">Github student developer pack</a> to be able to create private repos. The other option is to use <a href="https://bitbucket.org/">bitbucket</a>). <a href="https://help.github.com/articles/duplicating-a-repository/">Create a duplicate</a> of the <a href="https://github.com/uiuc-web-programming/mp1_starter">MP-1 starter code</a> from the class github repo by using the commands below</p>
 
-<p><code>bash
+<p><code>
 git clone --bare https://github.com/uiuc-web-programming/mp1_starter.git
 cd mp1_starter.git
 git push --mirror https://github.com/your-github-username/mp1.git
@@ -94,37 +94,37 @@ rm -rf mp1_starter.git
 </code>
 Then clone it to your machine and inspect the files inside by using the following commands</p>
 
-<p><code>bash
+<p><code>
 git clone https://github.com/your-github-username/mp1
 cd mp1
 </code></p>
 
 <p>10 - Install the NPM packages needed for the project. This reads the <code>package.json</code> files and installs the packages in the <code>node_packages</code> folder. If you have Windows on your host machine, you need to add the <code>--no-bin-links</code> option to this command.</p>
 
-<p><code>bash
+<p><code>
 npm install
 </code></p>
 
 <p>11 - Install front-end packages (only jQuery in our case) using bower. This reads the <code>bower.json</code> files and installs the packages in the <code>public/lib</code> folder.</p>
 
-<p><code>bash
+<p><code>
 bower install
 </code></p>
 
 <p>12 - Now use grunt to compile the scss files located at <code>source_sass</code>. The output will be saved in <code>public/css</code> folder</p>
 
-<p><code>bash
+<p><code>
 grunt compass
 </code>
 13 - Now use grunt to uglify the javascript files located at <code>source_js</code>. The output will be saved in <code>public/js</code> folder</p>
 
-<p><code>bash
+<p><code>
 grunt uglify
 </code></p>
 
 <p>14 - Serve the files using grunt.</p>
 
-<p><code>bash
+<p><code>
 grunt serve
 </code>
 <span style="color: blue"> Note: </span> The last three steps can be done together by just saying <code>grunt</code>.</p>
@@ -136,47 +136,6 @@ grunt serve
 <p><span style="color: red"> Warning: </span>  <strong>Do not edit anything under the <code>public/css</code> or <code>public/js</code> folders.</strong> All things there are auto-generated and any changes you make there will get overwritten by Grunt.</p>
 
 <p>17 - You can stop grunt by using <code>ctrl+c</code>. You can exit the vagrant guest VM by saying <code>exit</code>.</p>
-
-<p><span class="section-heading">SETTING UP A SERVER</span></p>
-
-<p>If you are officially enrolled in the class, you will receive a Virtual Machine from the course staff. Once you have the login credentials, you can ssh into the vm:</p>
-
-<p><code>bash
-ssh cs498rk@[insert your hostname here]
-</code></p>
-
-<p>Type in your password, and now repeat the steps in the previous section to clone your repository.</p>
-
-<p>Start screen and serve the files by running the expressjs server. You’ll first need to install screen:
-<code>
-sudo apt-get install screen
-</code></p>
-
-<p>You’ll need to enter your password in to install it. You’ll only need to do this one time.</p>
-
-<p><code>bash
-screen
-node app.js
-</code>
-The webpage should be up at http://[your hostname here]:3000 . Check that in your browser.</p>
-
-<p>Detach from screen and logout</p>
-
-<p><code>
-ctrl+a followerd by d
-exit
-</code></p>
-
-<p>Keep the server running till MP 1 is graded. To stop the server in the future login to your server, reattach to screen and stop the server</p>
-
-<p><code>
-ssh cs498rk@[insert your hostname here]
-screen -r
-ctrl+d
-exit # exit from screen
-exit # exit from server
-</code></p>
-
 
 
 			</div>
