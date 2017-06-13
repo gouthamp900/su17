@@ -64,9 +64,7 @@ cd vagrant-dev
 
 <p>5 - Boot up the virtual machine:</p>
 
-<p><code>
-vagrant up
-</code>
+<p><code>vagrant up</code></p>
 <p>6 - SSH into the virtual machine once it has booted up:</p>
 
 <p><code>
@@ -75,33 +73,24 @@ vagrant ssh
 
 <p>7 - The <code>vagrant-dev</code> folder on your host machine is mounted as <code>/vagrant</code> in your guest machine. Change your directory to this folder. This folder remains synced between the two operating systems and is the ideal place to put your projects. That way, you can edit files using the editor on OS X and run them from the terminal in Ubuntu. Now run the <code>install.sh</code> script present in that folder.</p>
 
-<p><code>cd /vagrant</code>
-<code>sudo apt-get install dos2unix **#you can skip this if you are not on a Windows machine**</code>
-<code>dos2unix install.sh **#you can skip this if you are not on a Windows machine**</code>
-<code>sh install.sh</code>
-<code>source ~/.profile</code>
+<p><code>cd /vagrant</code></p>
+<p><code>sudo apt-get install dos2unix **#you can skip this if you are not on a Windows machine**</code></p>
+<p><code>dos2unix install.sh **#you can skip this if you are not on a Windows machine**</code></p>
+<p><code>sh install.sh</code></p>
+<p><code>source ~/.profile</code></p>
 
 <p>8 - Go to your github account (or create one), and create a new repository named <code>mp1</code>. <strong><em>Set it to private</em></strong> (you’ll have to activate the <a href="https://education.github.com/pack">Github student developer pack</a> to be able to create private repos. The other option is to use <a href="https://bitbucket.org/">bitbucket</a>). <a href="https://help.github.com/articles/duplicating-a-repository/">Create a duplicate</a> of the <a href="https://github.com/uiuc-web-programming/mp1_starter">MP-1 starter code</a> from the class github repo by using the commands below</p>
 
-<p><code>
-git clone --bare https://github.com/uiuc-web-programming/mp1_starter.git;
-	
-cd mp1_starter.git;
-	
-git push --mirror https://github.com/your-github-username/mp1.git; # **Mirror-push to your mp1 repository. Use your github username in the URL. Change the URL if you're using bitbucket.**
-
-cd ..
-
-rm -rf mp1_starter.git
-</code>
+<p><code>git clone --bare https://github.com/uiuc-web-programming/mp1_starter.git;</code></p>
+<p><code>cd mp1_starter.git;</code></p>
+<p><code>git push --mirror https://github.com/your-github-username/mp1.git; # **Mirror-push to your mp1 repository. Use your github username in the URL. Change the URL if you're using bitbucket.**</code></p>
+<p><code>cd ..</code></p>
+<p><code>rm -rf mp1_starter.git</code></p>
 	
 <p>9 - Then clone it to your machine and inspect the files inside by using the following commands</p>
 
-<p><code>
-git clone https://github.com/your-github-username/mp1;
-	
-cd mp1
-</code></p>
+<p><code>git clone https://github.com/your-github-username/mp1;</code></p>
+<p><code>cd mp1</code></p>
 
 <p>10 - Install the NPM packages needed for the project. This reads the <code>package.json</code> files and installs the packages in the <code>node_packages</code> folder. If you have Windows on your host machine, you need to add the <code>--no-bin-links</code> option to this command.</p>
 
@@ -119,7 +108,7 @@ bower install
 
 <p><code>
 grunt compass
-</code>
+	</code></p>
 13 - Now use grunt to uglify the javascript files located at <code>source_js</code>. The output will be saved in <code>public/js</code> folder</p>
 
 <p><code>
@@ -130,7 +119,8 @@ grunt uglify
 
 <p><code>
 grunt serve
-</code>
+	</code></p>
+	       
 <span style="color: blue"> Note: </span> The last three steps can be done together by just saying <code>grunt</code>.</p>
 
 <p>15 - Open your browser and point it to <code>localhost:3000</code>. You should see the served webpage there. If you leave grunt running and now make changes to the files in the <code>source_sass</code> folder, the <code>source_js</code> folder and the <code>public/index.html</code> file, you will see the webpage reload automatically. This is done through <a href="https://github.com/gruntjs/grunt-contrib-watch#optionslivereload">grunt livereload</a>. This way you can code away on your code editor while seeing changes in the browser side by side.</p>
