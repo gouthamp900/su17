@@ -94,7 +94,7 @@
                   <div class="row lecture" ng-repeat="class in week.classes">
                     <div class="columns small-2">{{class.date}}</div>
                     <div class="columns small-3">
-                      <a ng-if="class.slides!=''" href={{"slides/"+class.slides}} class="topic">{{class.topic}}</a>
+                      <a ng-if="class.slides!=''" href="{{class.slides}}" class="topic">{{class.topic}}</a>
                       <a ng-if="class.slides==''" href="#" class="topic">{{class.topic}}</a>
                     </div>
                     <div class="columns small-4">
