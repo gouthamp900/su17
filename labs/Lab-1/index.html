@@ -75,13 +75,11 @@ vagrant ssh
 
 <p>7 - The <code>vagrant-dev</code> folder on your host machine is mounted as <code>/vagrant</code> in your guest machine. Change your directory to this folder. This folder remains synced between the two operating systems and is the ideal place to put your projects. That way, you can edit files using the editor on OS X and run them from the terminal in Ubuntu. Now run the <code>install.sh</code> script present in that folder.</p>
 
-<p><code>
-cd /vagrant
-sudo apt-get install dos2unix **#you can skip this if you are not on a Windows machine**
-dos2unix install.sh **#you can skip this if you are not on a Windows machine**
-sh install.sh
-source ~/.profile
-</code>
+<p><code>cd /vagrant</code>
+<code>sudo apt-get install dos2unix **#you can skip this if you are not on a Windows machine**</code>
+<code>dos2unix install.sh **#you can skip this if you are not on a Windows machine**</code>
+<code>sh install.sh</code>
+<code>source ~/.profile</code>
 
 <p>8 - Go to your github account (or create one), and create a new repository named <code>mp1</code>. <strong><em>Set it to private</em></strong> (you’ll have to activate the <a href="https://education.github.com/pack">Github student developer pack</a> to be able to create private repos. The other option is to use <a href="https://bitbucket.org/">bitbucket</a>). <a href="https://help.github.com/articles/duplicating-a-repository/">Create a duplicate</a> of the <a href="https://github.com/uiuc-web-programming/mp1_starter">MP-1 starter code</a> from the class github repo by using the commands below</p>
 
