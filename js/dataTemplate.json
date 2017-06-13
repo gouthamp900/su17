@@ -1,6 +1,6 @@
 {
   "title": "The Art of Web Programming",
-  "schedule": "CS498RK&nbsp;Monday and Wednesday&nbsp;11AM-12.15PM&nbsp;Siebel 0216",
+  "schedule": "CS498RK&nbsp;Monday to Thursday&nbsp;3:30PM-5PM&nbsp;Siebel 0216",
   "description": "Presents client- and server-side technologies that enable modern Web applications. Topics include the building blocks of the Web (HTML, CSS, the Document Object Model, JavaScript) and data exchange (HTTP, JSON, RESTful APIs, and SQL/NoSQL databases). Programming assignments will expose students to CSS preprocessors, grid systems, and full-stack JavaScript frameworks that scaffold development and testing. Prerequisites: CS225.",
   "staff": [
     {
