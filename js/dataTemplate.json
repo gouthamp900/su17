@@ -74,8 +74,8 @@
         },
         {
           "date": "Jun 15",
-          "topic": "JavaScript",
-          "slides": "",
+          "topic": "JavaScript + jQuery",
+          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/04.JS_jQuery.pdf",
           "description": "",
           "readings": [
             {
