@@ -113,7 +113,7 @@
         {
           "date": "Jun 20",
           "topic": "Visual & Responsive Design",
-          "slides": "",
+          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/03.css_js.pdf",
           "description": "",
           "readings": [
             {
@@ -128,7 +128,7 @@
         },
         {
           "date": "Jun 21",
-          "topic": "HTTP + Backend Templating",
+          "topic": "HTTP + Data Binding",
           "slides": "",
           "description": "",
           "readings": [
@@ -144,7 +144,7 @@
         },
         {
           "date": "Jun 22",
-          "topic": "Frontend Templating",
+          "topic": "AngularJS",
           "slides": "",
           "description": "",
           "readings": [
