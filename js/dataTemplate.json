@@ -129,7 +129,7 @@
         {
           "date": "Jun 21",
           "topic": "HTTP + Data Binding",
-          "slides": "",
+          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/07.http_data-binding.pdf",
           "description": "",
           "readings": [
             {
@@ -165,7 +165,7 @@
       "classes": [
         {
           "date": "Jun 26",
-          "topic": "DEV LAB: Angular",
+          "topic": "DEV LAB: Foundation",
           "slides": "",
           "description": "",
           "readings": [
@@ -197,7 +197,7 @@
         },
         {
           "date": "Jun 28",
-          "topic": "Dev Lab: Foundation",
+          "topic": "Dev Lab: Angular",
           "slides": "",
           "description": "",
           "readings": [
