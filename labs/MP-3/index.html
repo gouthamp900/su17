@@ -17,12 +17,12 @@
           <div class="nav">
             <a href="">PIAZZA</a>&nbsp;&nbsp;&nbsp;
             <a href="labs/">LABS AND MPS</a>&nbsp;&nbsp;&nbsp;
-            <a href="https://uiuc-web-programming.github.io/fa16/resources.html">RESOURCES</a>&nbsp;&nbsp;&nbsp;
+            <a href="https://uiuc-web-programming.github.io/su17/resources.html">RESOURCES</a>&nbsp;&nbsp;&nbsp;
           </div>
-          <div class="course_title_above"><a href="https://uiuc-web-programming.github.io/fa16/">The Art and Science of</a></div>
-          <div class="course_title"><a href="https://uiuc-web-programming.github.io/fa16/" class="ng-binding">Web Programming</a></div>
+          <div class="course_title_above"><a href="https://uiuc-web-programming.github.io/su17/">The Artof</a></div>
+          <div class="course_title"><a href="https://uiuc-web-programming.github.io/su17/" class="ng-binding">Web Programming</a></div>
           <div class="course_schedule">
-            <div class="">CS498RK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FALL 2016 UIUC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MONDAY AND WEDNESDAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM-12.15PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DCL 1310</div>
+            <div class="">CS498RK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUMMER 2017 UIUC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MONDAY TO THURSDAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.30-4.45PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIEBEL CENTER 0216</div>
           </div>
         </div>
       </div>
@@ -32,33 +32,40 @@
 
 
 
-    	<div class="heading">MP 3.0: AngularJS Front-end</div>
+    	<div class="heading">MP 3.0: Foundation & AngularJS</div>
 
-    	<p><span class="section-heading"> Due Date - <em>October 17th</em>, 2016, 11.59PM CST <span></span></span></p>
+    	<p><span class="section-heading"> Due Date - <em>July 12th</em>, 2016, 11.59PM CST <span></span></span></p>
 
-<p><span style="color: red"> Attention: </span> Please watch <a href="https://github.com/uiuc-web-programming/sp2016">this repository</a> and <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a> on Github (by clicking the watch button on the top right) to make sure you receive notifications if changes are made to the MPs or the Labs.</p>
+<p><span style="color: red"> Attention: </span> Please watch <a href="https://github.com/uiuc-web-programming/su17/">this repository</a> and <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a> on Github (by clicking the watch button on the top right) to make sure you receive notifications if changes are made to the MPs or the Labs.</p>
 
 <div class="section-heading"> Overview </div>
-<p>In this programming assignment you will implement a separate front-end interface using AngularJS. The assignment has one part. Please read through the entire MP before you start.</p>
+<p>In this programming assignment you will implement a responsive front-end interface using AngularJS and Foundation. The assignment has two parts. Please read through the entire MP before you start.</p>
 
 <p>You can use the development environment and server setup you used for MP 1.</p>
 
 <p>To get started, follow the setup instructions in the README of <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a></p>
 
-<p>Here is a video demo for a <a href="https://youtu.be/DmDZuAr7QJE">sample application</a></p>
+<p>Here is a video demo for a <a href="https://dddg.slack.com/files/krishna/F61CC4NDS/mp2.mov">sample application</a></p>
 
 <div class="section-heading"> AngularJS Front-End Design </div>
-<p>Goal: Create a single-page AngularJS app that lets users interact with the data from the <a href="http://www.imdb.com/chart/top">IMDB top 250 movies</a>. We’ve already crawled the data and formatted it as JSON: <code>public/data/imdb250.json</code>. We also downloaded the corresponding poster images for each movie: <code>public/data/images</code>. The images are named using the <code>imdbID</code> for each movies.</p>
+<p>Goal: Create a single-page responsive app that lets users interact with the data from the <a href="http://www.imdb.com/chart/top">IMDB top 250 movies</a>. We’ve already crawled the data and formatted it as JSON: <code>public/data/imdb250.json</code>. We also downloaded the corresponding poster images for each movie: <code>public/data/images</code>. The images are named using the <code>imdbID</code> for each movies.</p>
 
-<p>Your app should have the following features:</p>
+<p>Your app should have the following features:</p><br>
 
+<p> <strong> Part 1: </strong> Angular</p>
 <ol>
   <li>A list view where users can input a search query and the app returns a list of movies that match the query. There should also be a way to sort the search results based on different properties of the results (such as the name or rank) and of specifying an ordering (ascending and descending). Also, the search bar should filter as you type.</li>
   <li>A gallery view that displays the movie posters for all the movies. There should be a way to select movies from different genres in the gallery.</li>
   <li>When an item in search view or the gallery view is clicked, the app should display the different attributes of the selected movie (from the JSON file). Also, this view should have previous and next buttons (can be implemented with arrows) that lets the user cycle through the list of movies.</li>
   <li>You should use partials</li>
-  <li>You are free to use Foundation’s components (such as the grid etc. ) for this part as long as it is used for styling and not used to implement the core functionality of the app.
-We recommend you to use the following project structure:</li>
+</ol>
+		  
+<p> <strong> Part 2: </strong> Foundation</p>
+<ol>
+  <li>All views should be responsive</li>
+  <li>The list view should be a grid of 4+ coulums when large, 3 columns when middle and 1, when small. Like in the sample video.</li>
+  <li>The gallery view should have a responsive grid for the movies with 5+ columns in large, 4 in medium, and 2 in small. The menu for genre selection should also be responsive and should use it's own different gird. It should use all 12 columns in large, and shrink down to 3-4 columns on phones. </li>
+  <li>The details view for a movie should have the 2 columns for the image and details on large displays but only one on phones. </li>
 </ol>
 
 <p><strong>Files</strong>:</p>
@@ -105,7 +112,7 @@ src="./photos/skyline.jpg"
 <p>This is needed because when we host your code for grading, the folder structure on our server would be different from what it was on your server and things would break. So, you have to make sure the code in your <code>public</code> folder works no matter where the public folder is placed on a server.</p>
 
 <div class="section-heading"> Grade Breakdown </div>
-<p>Total Points : 50</p>
+<p>Total Points : 100</p>
 
 <p>List View:</p>
 
