@@ -8,21 +8,21 @@
 		  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     	<script src="../public/foundation.min.js"></script>
 
-        <title>MP 2.0: Responsiveness, Foundation & Research Data</title>
-        <link rel="stylesheet" href="../css/main.css" >
+        <title>MP 2.0: Foundation & AngularJS</title>
+        <link rel="stylesheet" href="../../css/app.css" >
     </head>
     <body>
       <div class="row course_header">
         <div class="small-12 columns">
           <div class="nav">
             <a href="">PIAZZA</a>&nbsp;&nbsp;&nbsp;
-            <a href="labs/">LABS AND MPS</a>&nbsp;&nbsp;&nbsp;
-            <a href="https://uiuc-web-programming.github.io/fa16/resources.html">RESOURCES</a>&nbsp;&nbsp;&nbsp;
+            <a href="../labs">LABS AND MPS</a>&nbsp;&nbsp;&nbsp;
+            <a href="https://uiuc-web-programming.github.io/su17/resources.html">RESOURCES</a>&nbsp;&nbsp;&nbsp;
           </div>
-          <div class="course_title_above"><a href="https://uiuc-web-programming.github.io/fa16/">The Art and Science of</a></div>
-          <div class="course_title"><a href="https://uiuc-web-programming.github.io/fa16/" class="ng-binding">Web Programming</a></div>
+          <div class="course_title_above"><a href="https://uiuc-web-programming.github.io/su17/">The Artof</a></div>
+          <div class="course_title"><a href="https://uiuc-web-programming.github.io/su17/" class="ng-binding">Web Programming</a></div>
           <div class="course_schedule">
-            <div class="">CS498RK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FALL 2016 UIUC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MONDAY AND WEDNESDAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11AM-12.15PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DCL 1310</div>
+            <div class="">CS498RK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUMMER 2017 UIUC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MONDAY TO THURSDAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.30-4.45PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIEBEL CENTER 0216</div>
           </div>
         </div>
       </div>
@@ -32,125 +32,155 @@
 
 
 
-    	<div class="heading">MP 2.0: Responsiveness, Foundation & Research Data</div>
+    	<div class="heading">MP 2.0: Foundation & AngularJS</div>
 
-    	<p><span class="section-heading">Due Date - Oct 3, 2016, 11.59PM CST</span></p>
+    	<p><span class="section-heading"> Due Date - <em>July 12th</em>, 2017, 11.59PM CST <span></span></span></p>
 
-<p><span style="color: red"> Attention: </span> Please watch <a href="https://github.com/uiuc-web-programming/mp2_starter">this repository</a> on Github (by clicking the watch button on the top right) to make sure you receive notifications if changes are made to the MP. <br />
-<span style="color: red"> Attention: </span> Please pay attention to <a href="https://piazza.com/class/is4r0uppzfx4q9">Piazza</a> because we will often make important announcements there regarding the MP before we make it in class. <br />
-<span style="color: red"> <strong>Attention:</strong> </span> <strong>Please add <code>uiuc-web-programming</code> as a collaborator on Github.</strong></p>
+<p><span style="color: red"> Attention: </span> Please watch <a href="https://github.com/uiuc-web-programming/su17/">this repository</a> and <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a> on Github (by clicking the watch button on the top right) to make sure you receive notifications if changes are made to the MPs or the Labs.</p>
 
-<p>In this programming assignment, you will make a single-page website that is responsive &amp; aesthetically pleasing. Part A is about doing research for your site and understanding common patterns in information architecture, style, and responsive design. Part B is about using the knowledge you gained in part A and applying it to an actual webpage that you will implement.</p>
+<div class="section-heading"> Overview </div>
+<p>In this programming assignment you will implement a responsive front-end interface using AngularJS and Foundation. The assignment has two parts. Please read through the entire MP before you start.</p>
 
-<p>You can use the development environment and server setup you used for MP1. Refer to Lab 2 &amp; the README for details about the MP 2 starter code.</p>
+<p>You can use the development environment you used for MP 1.</p>
 
-<div class="section-heading">Part A: Research Data</div>
+<p>To get started, follow the setup instructions in the README of <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a></p>
 
-<!-- We want you to search through different designs on Apropose’s site and create at least 2 trendsets  of 5-10 webpages each.  The first trendset should be focused on visual and stylistic elements that you’ve noticed. The webpages that you collect in this trendset are ones that you looked to for stylistic or visual inspiration or have elements that you can compare to those on your own site. The second trendset you create should be focused on functionality. In this trendset, focus on the functionality of webpages and identify  elements that inspired you (e.g. carousels, videos, drop-downs menus, tooltips ). A third (optional) trendset can be focused on the information architecture (or the content structure) of different webpages and how that inspired your own webpage.
+<p>Here is a video demo for a <a href="https://dddg.slack.com/files/krishna/F61CC4NDS/mp2.mov">sample application</a></p>
 
-Each webpage in a trendset should have an explanation with your observations about that particular page, why it’s in this trendset, and what conclusions you’ve drawn about it. Please add these explanations in the ‘notes’ box of each webpage in your trendset. -->
+<div class="section-heading"> AngularJS Front-End Design </div>
+<p>Goal: Create a single-page responsive app that lets users interact with the data from the <a href="http://www.imdb.com/chart/top">IMDB top 250 movies</a>. We’ve already crawled the data and formatted it as JSON: <code>public/data/imdb250.json</code>. We also downloaded the corresponding poster images for each movie: <code>public/data/images</code>. The images are named using the <code>imdbID</code> for each movies.</p>
 
-<p>For the research portion of this MP, we are asking you to do research on other web pages that you find interesting and can draw inspiration from. There are two parts to this research component.</p>
+<p>Your app should have the following features:</p><br>
 
-<p><strong>Requirements:</strong></p>
-
+<p> <strong> Part 1: </strong> Angular</p>
 <ol>
-  <li>Find 3 webpages that have a <strong>visual or stylistic element</strong> that you enjoy or find interesting. These webpages are the ones that you looked to for stylistic or visual inspiration or have elements that you can compare to those on your own webpage. For each webpage, write an explanation with your observations about that particular page and why you chose it. Your write up for each web page must be at least 100 words.</li>
-  <li>Find 3 webpages that have <strong>functionality</strong> that you enjoy or find interesting. For these webpages, focus on the functionality and identify elements and interactions that inspired you (e.g. carousels, videos, drop-down menus, tooltips, etc). For each webpage, write an explanation with your observations about that particular page and why you chose it. Your write up for each web page must be at least 100 words.</li>
+  <li>A list view where users can input a search query and the app returns a list of movies that match the query. There should also be a way to sort the search results based on different properties of the results (such as the name or rank) and of specifying an ordering (ascending and descending). Also, the search bar should filter as you type.</li>
+  <li>A gallery view that displays the movie posters for all the movies. There should be a way to select movies from different genres in the gallery.</li>
+  <li>When an item in search view or the gallery view is clicked, the app should display the different attributes of the selected movie (from the JSON file). Also, this view should have previous and next buttons (can be implemented with arrows) that lets the user cycle through the list of movies.</li>
+  <li>You should use partials</li>
+</ol>
+		  
+<p> <strong> Part 2: </strong> Foundation</p>
+<ol>
+  <li>All views should be responsive</li>
+  <li>The list view should be a grid of 4+ coulums when large, 3 columns when middle and 1, when small. Like in the sample video.</li>
+  <li>The gallery view should have a responsive grid for the movies with 5+ columns in large, 4 in medium, and 2 in small. The menu for genre selection should also be responsive and should use it's own different gird. It should use all 12 columns in large, and shrink down to 3-4 columns on phones. </li>
+  <li>The details view should have one column for the image and one for the details on large displays. On small displays, the image should get stcked on top of the details. </li>
 </ol>
 
-<p>You will put your write ups in the <code>research_data</code> folder in the MP2 starter.</p>
-
-<p>Things to talk about can include, but are not limited to:</p>
+<p><strong>Files</strong>:</p>
 
 <ol>
-  <li>The pros and cons of different designs and pages that you see</li>
-  <li>Features that you notice across different pages (ideally this trend is also reflected in your own webpage)</li>
-  <li>How the different responsive elements on the page move as the page is resized</li>
-  <li>What information is on the page and how it’s organized</li>
-  <li>Any type of design trend that you’ve noticed on the page or across multiple pages (e.g. if you’re looking at fashion websites and notice that many of them have black navigation bars and use small font in all caps)</li>
-  <li>How the site will help you improve your own or what elements from it you will use in the future</li>
+  <li>The main HTML file for this app should be <code>public/index.html</code>, <strong>but you should not have to make major changes to it</strong> (no more than 5-6 lines of code).
+The line of code <code>&lt;div ng-view&gt;&lt;/div&gt;</code> in the index.html inserts a partial into that div. It is up to you to set up the routing in your JS file.</li>
+  <li>Your app has three main views (one for the list, one for the gallery and the other for displaying the details of a particuar movie). These should be implemented using three different <a href="https://docs.angularjs.org/tutorial/step_07">Angular routing and partial templates</a>. You can implement them in the three files in <code>public/partials</code></li>
+  <li>Your Angular code should go in <code>source_js/app.js</code> except for the controllers. The controllers should be in <code>source_js/controllers.js</code>. This keeps your code organized.
+  <li>For styling, you can use the scss files in <code>scss</code> folder like you did in MP 1 or write a css file or borrow css/scss from elsewhere (such as from Foundation).</li>
 </ol>
 
-<div class="section-heading">Part B: Responsive Design With Foundation</div>
-<p>Goal: Create a  website using the <a href="http://foundation.zurb.com/docs/">Foundation front-end framework</a> such that the webpage’s layout is responsive and is well-designed on all form factors. You will also have the opportunity to use third-party UI components to achieve the same functionality (i.e., navigation bar, carousel) with fewer lines of code.</p>
+<p>Also, here is a list of angular components that you might find useful:
+1. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngApp">ngApp</a>
+2. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngController">ngController</a>
+3. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngModel">ngModel</a>
+4. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngRepeat">ngRepeat</a>
+5. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/service/$filter">filter</a>
+6. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/filter/orderBy">orderBy</a>
+7. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/service/$http">$http</a>
+8. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngSrc">ngSrc</a></p>
 
-<p><span style="color: red"> Attention: </span> We are using Foundation 6, not Foundation 5. Make sure you are referring to the right documentation when developing.</p>
+<p>For the complete list, please refer to the <a href="https://docs.angularjs.org/api/ng">Angular documentation</a>. Make sure you’re looking at the correct Angular version.</p>
 
-<p><strong>Requirements:</strong></p>
-
-<ol>
-  <li>Create a single-page marketing website for a <strong>real client</strong>: person, organization, company, concert, movie, etc. NOTE: You can reuse content for MP1 provided that it follows this requirement.</li>
-  <li>Start from scratch – don’t borrow code from MP1. Borrowing code from MP1 will probably cause more problems and not actually save you time since most of the code will need to be rewritten.</li>
-  <li>Responsiveness: Your webpage needs to be responsive and have visible changes when going from large to medium and medium to small screen sizes. These changes have to be intentional and well thought out. You will have to submit a writeup that lists these changes <strong>(at least three)</strong> and the rationale behind them.</li>
-  <li>Identify aspects of the site’s visual design that could be improved: better layout, color schemes, typography etc. You will have to submit a writeup that lists these areas <strong>(at least three)</strong> and how you improved them.</li>
-  <li>You must have all the elements we asked of you in <a href="https://uiuc-web-programming.github.io/su17/MP-1">MP1</a> (i.e., navigation bar, carousel)</li>
-</ol>
-
-<p>To improve the visual design of the web page from Part B, here are some specific things you can do:</p>
-
-<ol>
-  <li>Identify aspects of the site’s visual design that could be improved: better layout, color schemes, typography etc. You will have to submit a writeup that lists these areas (at least three) and how you improved them.</li>
-  <li>To customize Foundation components, modify the Foundation scss files in <code>source_sass/foundation</code>. The <a href="http://foundation.zurb.com/docs/">Foundation documentation</a> describes the available sass variables/mixins for each component.</li>
-  <li>Additional styles can also be added to the scss files in <code>source_sass</code> folder like you did in MP1.</li>
-  <li>Your redesign should draw on the visual design principles discussed in class:
-    <ul>
-      <li>functionally similar elements should have similar styling; functionally different elements should be styled differently</li>
-      <li>contrast should be used to give visual weight to important areas</li>
-      <li>use variations in font, size, weight, and style to create typographic contrast</li>
-      <li>use whitespace to perceptually group related elements and separate semantically different areas</li>
-      <li>use margins, leading, and adequate background/text color contrast to make text more readable</li>
-      <li>choose fonts and colors that match the mood/message/content of your site</li>
-    </ul>
-  </li>
-</ol>
-
-<p><span style="color: red"> Attention: </span> Once again, we are using Foundation 6, not Foundation 5. Make sure you are referring to the right documentation when developing.</p>
-
-<div class="section-heading">Rules</div>
+<div class="section-heading"> Rules </div>
 <ol>
   <li>This is an individual assignment. No collaboration is permitted.</li>
   <li>It is not permitted to copy/paste code that is not your own. You are, however, free to look at different code sources for inspiration and clarity. All sources (code as well as reading material) that you reference to complete this assignment must be declared in the submission.</li>
   <li>If you think something you’re doing might not be acceptable, please ask on Piazza.</li>
-  <li>If you have additional assets (say pictures) you should put them under <code>public/media</code> folder and put everything there or in its subfolders (say <code>public/media/pics</code> and <code>public/media/videos</code>). There should be no other place in your folder structure where you are loading assets from. For example, do not create a <code>css/images</code> directory. You need to create the media folder yourself.</li>
-  <li>You are free to use any component that Foundation provides (such as buttons, drop-down menus etc.) if it makes sense for your website. The <a href="http://foundation.zurb.com/docs/">Foundation documentation page</a> lists all such components on the left side of the page.</li>
-  <li>You are free to use any third party plugins or libraries as you deem fit. For example, you can implement your carousel using <a href="http://kenwheeler.github.io/slick/">Slick Carousel</a>. However, make sure that all such libraries get installed when we do <code>npm install</code> and <code>bower install</code> after cloning your MP 2 code repository (this can be done by adding the libraries in the <code>packages.json</code> or <code>bower.json</code> file.</li>
+  <li>If you have additional assets (say pictures) you should put them under <code>public/data</code> folder and put everything there or in its subfolders (say <code>public/data/pics</code> and <code>public/data/videos</code>). There should be no other place in your folder structure where you are loading assets from. For example, do not create a <code>css/images</code> directory.</li>
   <li>You should not use absolute paths to load any of your asset files (say css, images or js) from your server. For example, there should not be anything like:</li>
 </ol>
 
-<ul>
-  <li>
-    <p><code>html
+<p><code>html
 src="/photos/skyline.jpg"
 </code></p>
-  </li>
-  <li>
-    <p>They should all be relative paths (from your index.html file if that is where you are including this asset) like:</p>
-  </li>
-  <li><code>html
+
+<p>They should all be relative paths (from your index.html file if thats where you are including this asset) like:</p>
+
+<p><code>html
 src="./photos/skyline.jpg"
-</code></li>
-  <li>This is needed because when we host your code for grading, the folder structure on our server would be different from what it was on your server and things would break. So, you have to make sure the code in your <code>public</code> folder works no matter where the public folder is placed on a server.</li>
+</code></p>
+
+<p>This is needed because when we host your code for grading, the folder structure on our server would be different from what it was on your server and things would break. So, you have to make sure the code in your <code>public</code> folder works no matter where the public folder is placed on a server.</p>
+
+<div class="section-heading"> Grade Breakdown </div>
+<p>Total Points : 100</p>
+
+<p>List View:</p>
+
+<ul>
+  <li>Do the results change as we type? (6 points)</li>
+  <li>Does the search bar narrow down the movies? (6 points)</li>
+  <li>Can you sort by Film Name and Film Rank?  (6 points)</li>
+  <li>Can the sorting be done in Ascending and Descending order?  (6 points)</li>
+  <li>Do the results change from a 4+ column grid to a 3 column grid when going from large to medium screens? (2 points) </li>
+  <li>Do the results change from a 3 column grid to a 1 column grid when going from medium to small screens? (2 points) </li>
 </ul>
 
-<div class="section-heading">Grading Breakdown</div>
+<p>Gallery View:</p>
+
+<ul>
+  <li>Is the gallery composed of movie posters?  (6 points)</li>
+  <li>Does the list of genres contain all genres?  (6 points)</li>
+  <li>Does clicking on a Genre filter out the movies?  (6 points)</li>
+  <li>Does the genres menu use all 12 columns for large screens, and a 3-4 column grid for small screens? (2 points)</li>
+  <li>Do the movie posters have a 5+ column grid in large, 4 column grid in medium, and 2 column grid in small? (2 points)</li>
+
+  
+</ul>
+
+<p>Details View:</p>
+
+<ul> 
+  <li>Does clicking on a movie in List View take you to the Details View?  (8 points)</li>
+  <li>Does clicking on a movie in Gallery View take you to the Details View?  (8 points)</li>
+  <li>Does the Details View contain movie details?  (4 points)</li>
+  <li>Do the PREVIOUS and NEXT buttons work correctly?  (10 points)</li>
+  <li>Does the page have  one column for the image and one for the details on large displays and a stack the image and details for small displays? (4 points) </li>
+</ul>
+		  
+<p>Other:</p>
+ 
+ <ul>
+   <li>Does the implementation use partials and routes?  (5 points)</li>
+   <li>Does the implementation use factories/services?  (5 points)</li>  
+   <li>Design (6 points)</li>
+ </ul>
+ 
+		  
+<div class="section-heading"> Tips </div>
 
 <ol>
-  <li>Research of Visual and Functional Design - 20%</li>
-  <li>Responsive Design - 40%</li>
-  <li>Implement MP1 Features - 20%</li>
-  <li>Visual Design - 20%</li>
+  <li>To be able to debug AngularJS code in the chrome developer tools, you should install the <a href="https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek">AngularJS Batarang (Stable)</a> plugin. Some other AngularJS debugging tips can be found <a href="http://ionicframework.com/blog/angularjs-console/">in this article</a></li>
+  <li>Also, if you have problems debugging your JavaScript due to uglification, you can disable it by commenting out line 49 of Gruntfile.js and uncommenting line 50. Your final submission for MP 3 should work with uglification though.</li>
+  <li>Uglification/minification of Angular code can result in undesirable changes (due to change in function parameter names). One thing you can do to avoid this is to always declare your controllers using the following template:</li>
 </ol>
 
-<p>Please be mindful of the requirements that we’ve listed for each of these three sections. For the research portion, please be thorough with your write ups. For the responsive design portion, please responsify your website in at least 3 clear ways and explain what they are. For the visual design section, please improve your site in at least 3 ways and state why you made the changes you did. You will have a chance to explain what you did in the supplemental Google form when it is released.</p>
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>imdbControllers.controller(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">myController</span><span style="color:#710">'</span></span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$scope</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$http</span><span style="color:#710">'</span></span>, <span style="color:#080;font-weight:bold">function</span>(<span style="color:#369;font-weight:bold">$scope</span>, <span style="color:#369;font-weight:bold">$http</span>) {
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>}]);
+</pre></div>
+</div>
+</div>
 
-<div class="section-heading">Submission Details</div>
+<p>instead of:</p>
 
-<p>Please submit your MP at <a href="http://uiucwp.com/#/submit">http://uiucwp.com/#/submit</a>.</p>
+<pre><code>imdbControllers.controller('myController', function($scope, $http) {
+});
+</code></pre>
 
-<p>Make sure you fill out the supplemental submission form once you complete your MP. You can find the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSdso5eLsMbagg6dVhMIJB4HoC_fQe7IH6HKTxRByF2Nc3hXBA/viewform">here</a>. The supplemental form is required!</p>
+<p>This prevents the function parameter names from being changed.</p>
 
-<p><span style="color: red"> <strong>Attention:</strong> </span> <strong>Please add <code>uiuc-web-programming</code> as a collaborator on Github.</strong></p>
+<div class="section-heading"> Submission Details </div>
+<p> TBD </p> 
 
 
 
