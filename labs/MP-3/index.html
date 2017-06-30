@@ -41,7 +41,7 @@
 <div class="section-heading"> Overview </div>
 <p>In this programming assignment you will implement a responsive front-end interface using AngularJS and Foundation. The assignment has two parts. Please read through the entire MP before you start.</p>
 
-<p>You can use the development environment and server setup you used for MP 1.</p>
+<p>You can use the development environment you used for MP 1.</p>
 
 <p>To get started, follow the setup instructions in the README of <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a></p>
 
@@ -65,7 +65,7 @@
   <li>All views should be responsive</li>
   <li>The list view should be a grid of 4+ coulums when large, 3 columns when middle and 1, when small. Like in the sample video.</li>
   <li>The gallery view should have a responsive grid for the movies with 5+ columns in large, 4 in medium, and 2 in small. The menu for genre selection should also be responsive and should use it's own different gird. It should use all 12 columns in large, and shrink down to 3-4 columns on phones. </li>
-  <li>The details view for a movie should have the 2 columns for the image and details on large displays but only one on phones. </li>
+  <li>The details view should have one column for the image and one for the details on large displays. On small displays, the image should get stcked on top of the details. </li>
 </ol>
 
 <p><strong>Files</strong>:</p>
@@ -75,7 +75,7 @@
 The line of code <code>&lt;div ng-view&gt;&lt;/div&gt;</code> in the index.html inserts a partial into that div. It is up to you to set up the routing in your JS file.</li>
   <li>Your app has three main views (one for the list, one for the gallery and the other for displaying the details of a particuar movie). These should be implemented using three different <a href="https://docs.angularjs.org/tutorial/step_07">Angular routing and partial templates</a>. You can implement them in the three files in <code>public/partials</code></li>
   <li>Your Angular code should go in <code>source_js/app.js</code> except for the controllers. The controllers should be in <code>source_js/controllers.js</code>. This keeps your code organized.
-4, For styling, you can use the scss files in <code>scss</code> folder like you did in MP 1 or write a css file or borrow css/scss from elsewhere (such as from Foundation).</li>
+  <li>For styling, you can use the scss files in <code>scss</code> folder like you did in MP 1 or write a css file or borrow css/scss from elsewhere (such as from Foundation).</li>
 </ol>
 
 <p>Also, here is a list of angular components that you might find useful:
