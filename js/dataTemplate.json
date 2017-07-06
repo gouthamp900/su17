@@ -284,9 +284,9 @@
         },
         {
           "date": "Jul 6",
-          "topic": "Midterm Review",
+          "topic": "APIs",
           "slides": "",
-          "description": "",
+          "description": "https://github.com/uiuc-web-programming/su17/raw/master/slides/15.rest_api.pdf",
           "readings": [
             {
               "title": "",
@@ -305,7 +305,7 @@
       "classes": [
         {
           "date": "Jul 10",
-          "topic": "App (UI/UX) Design",
+          "topic": "Midterm Review",
           "slides": "",
           "description": "",
           "readings": [
@@ -339,7 +339,7 @@
         },
         {
           "date": "Jul 12",
-          "topic": "APIs",
+          "topic": "Node",
           "slides": "",
           "description": "",
           "readings": [
@@ -350,7 +350,7 @@
         },
         {
           "date": "Jul 13",
-          "topic": "Node",
+          "topic": "Async Programming",
           "slides": "",
           "description": "",
           "readings": [
