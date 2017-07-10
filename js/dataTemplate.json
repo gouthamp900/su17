@@ -285,8 +285,8 @@
         {
           "date": "Jul 6",
           "topic": "APIs",
-          "slides": "",
-          "description": "https://github.com/uiuc-web-programming/su17/raw/master/slides/15.rest_api.pdf",
+          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/15.rest_api.pdf",
+          "description": "",
           "readings": [
             {
               "title": "",
