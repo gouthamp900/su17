@@ -8,7 +8,7 @@
 		  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     	<script src="../public/foundation.min.js"></script>
 
-        <title>MP 2.0: Foundation & AngularJS</title>
+        <title>MP 3: Consuming a RESTful API</title>
         <link rel="stylesheet" href="../../css/app.css" >
     </head>
     <body>
@@ -32,152 +32,290 @@
 
 
 
-    	<div class="heading">MP 2.0: Foundation & AngularJS</div>
+    	<div class="heading">MP 4.1: Consuming a RESTful API</div>
 
-    	<p><span class="section-heading"> Due Date - <em>July 12th</em>, 2017, 11.59PM CST <span></span></span></p>
+    	<p><span class="section-heading">Due Date - <em>July 26th</em>, 2017, 11.59PM CST</span></p>
 
-<p><span style="color: red"> Attention: </span> Please watch <a href="https://github.com/uiuc-web-programming/su17/">this repository</a> and <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a> on Github (by clicking the watch button on the top right) to make sure you receive notifications if changes are made to the MPs or the Labs.</p>
+<p><span style="color: red"> Attention: </span> Please watch <a href="https://github.com/uiuc-web-programming/su17">this repository</a>, <a href="https://github.com/uiuc-web-programming/mp4_client_starter">this repository</a> and <a href="https://github.com/uiuc-web-programming/mp4_server_starter">this repository</a> on Github (by clicking the watch button on the top right) to make sure you receive notifications if changes are made to the MPs or the Labs.</p>
 
-<div class="section-heading"> Overview </div>
-<p>In this programming assignment you will implement a responsive front-end interface using AngularJS and Foundation. The assignment has two parts. Please read through the entire MP before you start.</p>
+<p><strong>A demo of a sample app can be seen in <a href="https://www.youtube.com/watch?v=3MoYSJj5M3g">this video</a>.</strong></p>
 
-<p>You can use the development environment you used for MP 1.</p>
+<p><span class="section-heading">Overview</span></p>
 
-<p>To get started, follow the setup instructions in the README of <a href="https://github.com/uiuc-web-programming/mp3_starter">this repository</a></p>
+<p>In this MP, you will create a REST API (using Node, Express and Mongo) and create a front-end (using Angular) that consumes the API. This MP is split up in to two parts. Both the parts can be developed independently. When you are developing your front-end, you can test it using our reference API implementation at <a href="http://www.uiucwp.com:4000/api">http://www.uiucwp.com:4000/api</a>.</p>
 
-<p>Here is a video demo for a <a href="https://dddg.slack.com/files/krishna/F61CC4NDS/mp2.mov">sample application</a></p>
+<p><span class="section-heading">Part A: Consuming a RESTful API using AngularJS</span></p>
 
-<div class="section-heading"> AngularJS Front-End Design </div>
-<p>Goal: Create a single-page responsive app that lets users interact with the data from the <a href="http://www.imdb.com/chart/top">IMDB top 250 movies</a>. We’ve already crawled the data and formatted it as JSON: <code>public/data/imdb250.json</code>. We also downloaded the corresponding poster images for each movie: <code>public/data/images</code>. The images are named using the <code>imdbID</code> for each movies.</p>
+<p><strong>The Basic Goal</strong> : Create a single-page AngularJS task management app that uses our API.</p>
 
-<p>Your app should have the following features:</p><br>
+<p><strong>The Fun Goal</strong> : Imagine your hot new startup, Llama.io, is creating the best looking todo webapp on the market. You’re competing in a crowded space with hot players like Asana, Wunderlist, Google Keep, etc, so your app has to look amazing. Best looking implementations will get showcased in class and go in our newly created hall of fame!</p>
 
-<p> <strong> Part 1: </strong> Angular</p>
+<p>Requirements:</p>
 <ol>
-  <li>A list view where users can input a search query and the app returns a list of movies that match the query. There should also be a way to sort the search results based on different properties of the results (such as the name or rank) and of specifying an ordering (ascending and descending). Also, the search bar should filter as you type.</li>
-  <li>A gallery view that displays the movie posters for all the movies. There should be a way to select movies from different genres in the gallery.</li>
-  <li>When an item in search view or the gallery view is clicked, the app should display the different attributes of the selected movie (from the JSON file). Also, this view should have previous and next buttons (can be implemented with arrows) that lets the user cycle through the list of movies.</li>
-  <li>You should use partials</li>
+<li> Your app should have the following views:
+	<ol>
+		<li>
+		Settings:
+			<ul>
+				<li>Should at least have a way to specify the URL to the API </li>
+	    	</ul>
+		</li>
+	    <li>
+	    User List:
+	    <ul>
+	    	<li>List **all** user names. The API should be called only to return the needed information about each user (user name and email). Clicking on a user should take us to the User Details view.</li>
+	    	<li>Have a button to create a new user that takes you to Add User view. </li>
+	    	<li>**Have a delete button next to each displayed user.**</li>
+		</ul>
+	    </li>
+	    <li>
+	    Task List:
+	    <ul>
+	    	<li>List task names (use **pagination** to display only 10 at a time) with the name of the assigned user next to it. The API should be called only to return the needed information about each task (name, \_id, assignedUserName). Clicking on a task should take us to the Task Details view.</li>
+	    	<li>Have an input (for example radio buttons) to show "All", "Completed" or "Pending" tasks. By default it should show the Pending tasks. Changing the input should result in an API call (no filtering on the front-end).</li>
+	    	<li>Have next and previous buttons. </li>
+	    	<li>Have a button to create a new task that takes you to Add Task view.</li>
+	    	<li>Have a sort-by dropdown menu with appropriate options (name, username, dateCreated, deadline) and ascending/descending radio buttons. Any change to the sorting inputs should result in an API call that gets the new data (we do not want you to sort or filter data in the front-end).</li>
+	    	<li>**Have a delete button next to each displayed task.**</li>
+	    	<li>If a task is deleted, it should be deleted from the `pendingTasks` array of the user it was assigned to </li>
+		</ul>
+	    </li>
+	  <li>
+	  User Details:
+	  <ul>
+	  	<li>Show details about the user (name, email)</li>
+	  	<li>Show a list of pending tasks that the user has. This should be generated by making an API call to the tasks endpoint with query string parameters to perform appropriate filtering. There should be a way to mark each task as complete. As soon as a task is marked as complete, it should make an API call and then dissapear from that list. Also, clicking on a task should take us to the Task Details view.</li>
+	  	<li>A button to Load completed tasks by this user.</li>
+	  	<li>If a user is deleted, all pending tasks that the user had should be updated to have `assignedUserName` changed to "unassigned"</li>
+		</ul>
+	</li>
+	  <li>
+	  Task Details:
+	  <ul>
+	  	<li>Show details about the task (name, description, user assigned to etc.)</li>
+	  	<li>Have a edit task button that takes you to Edit Task view</li>
+	  	<li>Have a way to change the completion status of the tasks. When that is changed an API call should be made to change the status. </li>
+	</ul>
+	</li>
+	<li>Add User: should have name and email fields </li>
+	<li>Add Task: should have name, description, deadline and a dropdown menu to choose an assigned user</li>
+	<li>Edit Task	</li>
+	</ol>
+</li>
+<li> Data (say when editing a user's name) should change on the front-end only after the data is successfully changed on the server through the API. If the API call results in an error, the front end should display the error message (from the "message" field of the response). </li>
+<li> Your app should use partials and routes to implement all the different views listed above. </li>
+<li> You app should interact with the API only through custom service(s) that you write. You would have to inject these services into your controllers. </li>
+<li>You should have client side validation to ensure that
+	<ol>
+		<li>
+			Users cannot be created (or updated) without a name or email. Also check for the validity of the email provided. These fields should be marked with a red * to indicate that they are required and an error message should pop up when users don't comply.
+		</li>
+		<li>
+			Tasks cannot be created (or updated) without a name or a deadline. These fields should be marked with a red * to indicate that they are required and an error message should pop up when users don't comply.
+		</li>
+	</ol>
+</li>
+<li>
+	All your date entry fields should use a graphical date picker (wer recommend [this one](http://720kb.github.io/angular-datepicker/)).
+</li>
 </ol>
-		  
-<p> <strong> Part 2: </strong> Foundation</p>
+
+<p><span class="section-heading">API Reference</span></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Endpoints</th>
+      <th>Actions</th>
+      <th>Intended Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>users</td>
+      <td>GET</td>
+      <td>Respond with a List of users</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POST</td>
+      <td>Create a new user. Respond with details of new user</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OPTIONS</td>
+      <td>See the last tip at the bottom of the page</td>
+    </tr>
+    <tr>
+      <td>users/:id</td>
+      <td>GET</td>
+      <td>Respond with details of specified user or 404 error</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>PUT</td>
+      <td>Replace entire user with supplied user or 404 error</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>DELETE</td>
+      <td>Delete specified user or 404 error</td>
+    </tr>
+    <tr>
+      <td>tasks</td>
+      <td>GET</td>
+      <td>Respond with a List of tasks</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POST</td>
+      <td>Create a new task. Respond with details of new task</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OPTIONS</td>
+      <td>See the last tip at the bottom of the page</td>
+    </tr>
+    <tr>
+      <td>tasks/:id</td>
+      <td>GET</td>
+      <td>Respond with details of specified task or 404 error</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>PUT</td>
+      <td>Replace entire task with supplied task or 404 error</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>DELETE</td>
+      <td>Delete specified user or 404 error</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In addition, the API has the following JSON encoded query string parameters for the GET requests to the <code>users</code> and <code>tasks</code> endpoints:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paramter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>where</td>
+      <td>filter results based on JSON query</td>
+    </tr>
+    <tr>
+      <td>sort</td>
+      <td>specify the order in which to sort each specified field  (1- ascending; -1 - descending)</td>
+    </tr>
+    <tr>
+      <td>select</td>
+      <td>specify the set of fields to include or exclude in each document  (1 - include; 0 - exclude)</td>
+    </tr>
+    <tr>
+      <td>skip</td>
+      <td>specify the number of results to skip in the result set; useful for pagination</td>
+    </tr>
+    <tr>
+      <td>limit</td>
+      <td>specify the number of results to return (default should be 100 for tasks and unlimited for users)</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>if set to true, return the count of documents that match the query (instead of the documents themselves)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here are some example queries and what they would return:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Query</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>http://www.uiucwp.com:4000/api/users?where={"_id": "55099652e5993a350458b7b7"}</code></td>
+      <td>Returns a list with a single user with the specified ID</td>
+    </tr>
+    <tr>
+      <td><code>http://www.uiucwp.com:4000/api/tasks?where={"completed": true}</code></td>
+      <td>Returns a list of completed tasks</td>
+    </tr>
+    <tr>
+      <td><code>http://www.uiucwp.com:4000/api/tasks?where={"_id": {"$in": ["235263523","3872138723"]}}</code></td>
+      <td>Returns a set of tasks</td>
+    </tr>
+    <tr>
+      <td><code>http://www.uiucwp.com:4000/api/users?sort={"name": 1}</code></td>
+      <td>Returns a list of users sorted by name</td>
+    </tr>
+    <tr>
+      <td><code>http://www.uiucwp.com:4000/api/users?select={"_id": 0}</code></td>
+      <td>Returns a list of users without the _id field</td>
+    </tr>
+    <tr>
+      <td><code>http://www.uiucwp.com:4000/api/users?skip=60&amp;limit=20</code></td>
+      <td>Returns user number 61 to 80</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>The API should be able to handle any combination of those parameters in a single request</strong>. For example, the following is a valid GET request:</p>
+
+<p><code>javascript
+http://www.uiucwp.com:4000/api/users?sort={"name": 1}&amp;skip=60&amp;limit=20
+</code></p>
+
+<p>Here is the User Schema:</p>
+
 <ol>
-  <li>All views should be responsive</li>
-  <li>The list view should be a grid of 4+ coulums when large, 3 columns when middle and 1, when small. Like in the sample video.</li>
-  <li>The gallery view should have a responsive grid for the movies with 5+ columns in large, 4 in medium, and 2 in small. The menu for genre selection should also be responsive and should use it's own different gird. It should use all 12 columns in large, and shrink down to 3-4 columns on phones. </li>
-  <li>The details view should have one column for the image and one for the details on large displays. On small displays, the image should get stcked on top of the details. </li>
+  <li>“name” - String</li>
+  <li>“email” - String</li>
+  <li>“pendingTasks” - [String] - The _id fields of the <em>pending</em> tasks that this user has</li>
+  <li>“dateCreated” - Date - should be set automatically by server</li>
 </ol>
 
-<p><strong>Files</strong>:</p>
+<p>Here is the Task Schema:</p>
 
 <ol>
-  <li>The main HTML file for this app should be <code>public/index.html</code>, <strong>but you should not have to make major changes to it</strong> (no more than 5-6 lines of code).
-The line of code <code>&lt;div ng-view&gt;&lt;/div&gt;</code> in the index.html inserts a partial into that div. It is up to you to set up the routing in your JS file.</li>
-  <li>Your app has three main views (one for the list, one for the gallery and the other for displaying the details of a particuar movie). These should be implemented using three different <a href="https://docs.angularjs.org/tutorial/step_07">Angular routing and partial templates</a>. You can implement them in the three files in <code>public/partials</code></li>
-  <li>Your Angular code should go in <code>source_js/app.js</code> except for the controllers. The controllers should be in <code>source_js/controllers.js</code>. This keeps your code organized.
+  <li>“name” - String</li>
+  <li>“description” - String</li>
+  <li>“deadline” - Date</li>
+  <li>“completed” - Boolean</li>
+  <li>“assignedUser” - String - The _id field of the user this task is assigned to - default “”</li>
+  <li>“assignedUserName” - String - The name field of the user this task is assigned to - default “unassigned”</li>
+  <li>“dateCreated” - Date - should be set automatically by server to present date</li>
+</ol>
+
+<p><strong>We assume that each task can be assigned only to one user.</strong></p>
+
+<p>We recommend you to use the following project structure:</p>
+
+<ol>
+  <li>The main HTML file for this app should be <code>public/index.html</code>. It should contain the code that is common to all views in the app. For example, you can include all CSS and JavaScript files here. You can also have code for a navbar here.</li>
+  <li>Your app has several views (as listed above). These should be implemented using different <a href="https://docs.angularjs.org/tutorial/step_07">Angular partial templates</a> in <code>public/partials</code></li>
+  <li>Your Angular code should go in <code>js/app.js</code> except for the conrollers and services. The controllers should be in <code>js/controllers.js</code> and the services should be in <code>js/services.js</code>.</li>
   <li>For styling, you can use the scss files in <code>scss</code> folder like you did in MP 1 or write a css file or borrow css/scss from elsewhere (such as from Foundation).</li>
+  <li>Your are free to use different Foundation components (such as <a href="http://foundation.zurb.com/docs/components/abide.html">Abide Validation</a>) or other libraries to augment your apps visual design and functionality. However, the core of your app should be written in AngularJS according to the specific details provided above.</li>
 </ol>
 
-<p>Also, here is a list of angular components that you might find useful:
-1. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngApp">ngApp</a>
-2. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngController">ngController</a>
-3. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngModel">ngModel</a>
-4. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngRepeat">ngRepeat</a>
-5. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/service/$filter">filter</a>
-6. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/filter/orderBy">orderBy</a>
-7. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/service/$http">$http</a>
-8. <a href="https://code.angularjs.org/1.3.13/docs/api/ng/directive/ngSrc">ngSrc</a></p>
-
-<p>For the complete list, please refer to the <a href="https://docs.angularjs.org/api/ng">Angular documentation</a>. Make sure you’re looking at the correct Angular version.</p>
-
-<div class="section-heading"> Rules </div>
-<ol>
-  <li>This is an individual assignment. No collaboration is permitted.</li>
-  <li>It is not permitted to copy/paste code that is not your own. You are, however, free to look at different code sources for inspiration and clarity. All sources (code as well as reading material) that you reference to complete this assignment must be declared in the submission.</li>
-  <li>If you think something you’re doing might not be acceptable, please ask on Piazza.</li>
-  <li>If you have additional assets (say pictures) you should put them under <code>public/data</code> folder and put everything there or in its subfolders (say <code>public/data/pics</code> and <code>public/data/videos</code>). There should be no other place in your folder structure where you are loading assets from. For example, do not create a <code>css/images</code> directory.</li>
-  <li>You should not use absolute paths to load any of your asset files (say css, images or js) from your server. For example, there should not be anything like:</li>
-</ol>
-
-<p><code>html
-src="/photos/skyline.jpg"
-</code></p>
-
-<p>They should all be relative paths (from your index.html file if thats where you are including this asset) like:</p>
-
-<p><code>html
-src="./photos/skyline.jpg"
-</code></p>
-
-<p>This is needed because when we host your code for grading, the folder structure on our server would be different from what it was on your server and things would break. So, you have to make sure the code in your <code>public</code> folder works no matter where the public folder is placed on a server.</p>
-
-<div class="section-heading"> Grade Breakdown </div>
-<p>Total Points : 100</p>
-
-<p>List View:</p>
+<p>Also, here is a list of angular things that you might find useful</p>
 
 <ul>
-  <li>Do the results change as we type? (6 points)</li>
-  <li>Does the search bar narrow down the movies? (6 points)</li>
-  <li>Can you sort by Film Name and Film Rank?  (6 points)</li>
-  <li>Can the sorting be done in Ascending and Descending order?  (6 points)</li>
-  <li>Do the results change from a 4+ column grid to a 3 column grid when going from large to medium screens? (2 points) </li>
-  <li>Do the results change from a 3 column grid to a 1 column grid when going from medium to small screens? (2 points) </li>
+  <li><a href="https://docs.angularjs.org/api/ng/service/$http">$http</a></li>
+  <li><a href="http://stackoverflow.com/a/13939813">Writing an AngularJS services</a></li>
+  <li>Look at <a href="http://stackoverflow.com/questions/13937318/convert-angular-http-get-function-to-a-service">this stack overflow question</a> to understand how to write a service</li>
+  <li>Here is a [helpful beginner tutorial] for some of the technologies used in this MP.(http://adrianmejia.com/blog/2014/09/28/angularjs-tutorial-for-beginners-with-nodejs-expressjs-and-mongodb/)</li>
+  <li>Apparently, Angular always makes an <a href="http://stackoverflow.com/questions/24656488/angularjs-how-to-disable-option-request">OPTIONS request before a POST request</a>. For MP 4.1 you do not need to worry about this, but it is good to know for when you see these requests popping up in the inspector.</li>
 </ul>
-
-<p>Gallery View:</p>
-
-<ul>
-  <li>Is the gallery composed of movie posters?  (6 points)</li>
-  <li>Does the list of genres contain all genres?  (6 points)</li>
-  <li>Does clicking on a Genre filter out the movies?  (6 points)</li>
-  <li>Does the genres menu use all 12 columns for large screens, and a 3-4 column grid for small screens? (2 points)</li>
-  <li>Do the movie posters have a 5+ column grid in large, 4 column grid in medium, and 2 column grid in small? (2 points)</li>
-
-  
-</ul>
-
-<p>Details View:</p>
-
-<ul> 
-  <li>Does clicking on a movie in List View take you to the Details View?  (8 points)</li>
-  <li>Does clicking on a movie in Gallery View take you to the Details View?  (8 points)</li>
-  <li>Does the Details View contain movie details?  (4 points)</li>
-  <li>Do the PREVIOUS and NEXT buttons work correctly?  (10 points)</li>
-  <li>Does the page have  one column for the image and one for the details on large displays and a stack the image and details for small displays? (4 points) </li>
-</ul>
-		  
-<p>Other:</p>
- 
- <ul>
-   <li>Does the implementation use partials and routes?  (5 points)</li>
-   <li>Does the implementation use factories/services?  (5 points)</li>  
-   <li>Design (6 points)</li>
- </ul>
- 
-		  
-<div class="section-heading"> Tips </div>
-
-<ol>
-  <li>To be able to debug AngularJS code in the chrome developer tools, you should install the <a href="https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek">AngularJS Batarang (Stable)</a> plugin. Some other AngularJS debugging tips can be found <a href="http://ionicframework.com/blog/angularjs-console/">in this article</a></li>
-  <li>Also, if you have problems debugging your JavaScript due to uglification, you can disable it by commenting out line 49 of Gruntfile.js and uncommenting line 50. Your final submission for MP 3 should work with uglification though.</li>
-  <li>Uglification/minification of Angular code can result in undesirable changes (due to change in function parameter names). One thing you can do to avoid this is to always declare your controllers using the following template:</li>
-</ol>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>imdbControllers.controller(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">myController</span><span style="color:#710">'</span></span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$scope</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">$http</span><span style="color:#710">'</span></span>, <span style="color:#080;font-weight:bold">function</span>(<span style="color:#369;font-weight:bold">$scope</span>, <span style="color:#369;font-weight:bold">$http</span>) {
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>}]);
-</pre></div>
-</div>
-</div>
-
-<p>instead of:</p>
-
-<pre><code>imdbControllers.controller('myController', function($scope, $http) {
-});
-</code></pre>
-
-<p>This prevents the function parameter names from being changed.</p>
 
 <div class="section-heading"> Submission Details </div>
 <p> TBD </p> 
