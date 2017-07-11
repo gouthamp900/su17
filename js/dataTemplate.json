@@ -323,8 +323,8 @@
         },
         {
           "date": "Jul 11",
-          "topic": "Databases",
-          "slides": "",
+          "topic": "MongoDB",
+          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/17.mongodb.pdf",,
           "description": "",
           "readings": [
             {
