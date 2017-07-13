@@ -351,7 +351,7 @@
         {
           "date": "Jul 13",
           "topic": "Async Programming",
-          "slides": "",
+          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/AsyncLecture.pdf",
           "description": "",
           "readings": [
           ]
