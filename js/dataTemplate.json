@@ -340,7 +340,7 @@
         {
           "date": "Jul 12",
           "topic": "Node",
-          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/NodeLecture.pdf",
+          "slides": "",
           "description": "",
           "readings": [
             {
@@ -364,7 +364,7 @@
         {
           "date": "Jul 17",
           "topic": "Express",
-          "slides": "",
+          "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/NodeLecture.pdf",
           "description": "",
           "readings": [
             {
