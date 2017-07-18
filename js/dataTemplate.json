@@ -339,7 +339,7 @@
         },
         {
           "date": "Jul 12",
-          "topic": "Node",
+          "topic": "MP2 Help Session",
           "slides": "",
           "description": "",
           "readings": [
@@ -363,7 +363,7 @@
       "classes": [
         {
           "date": "Jul 17",
-          "topic": "Express",
+          "topic": "Node",
           "slides": "https://github.com/uiuc-web-programming/su17/raw/master/slides/NodeLecture.pdf",
           "description": "",
           "readings": [
@@ -379,7 +379,7 @@
         },
         {
           "date": "Jul 18",
-          "topic": "DEV LAB: Node, Express",
+          "topic": "Express",
           "slides": "",
           "description": "",
           "readings": [
@@ -387,7 +387,7 @@
         },
         {
           "date": "Jul 19",
-          "topic": "MEAN Stack Review",
+          "topic": "API Design Activity",
           "slides": "",
           "description": "",
           "readings": [
@@ -403,7 +403,7 @@
         },
         {
           "date": "Jul 20",
-          "topic": "TBD",
+          "topic": "API Design Activity",
           "slides": "",
           "description": "",
           "readings": [
@@ -449,7 +449,7 @@
         },
         {
           "date": "Jul 27",
-          "topic": "DEV LAB: Passport",
+          "topic": "MEAN Stack Review",
           "slides": "",
           "description": "",
           "readings": [
